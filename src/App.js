@@ -1,10 +1,4 @@
-import {
-  Fab,
-  List,
-  ListItem,
-  ThemeProvider,
-  Typography,
-} from "@mui/material";
+import { Fab, List, ListItem, ThemeProvider, Typography } from "@mui/material";
 // import { createTheme } from "@mui/system";
 import AddIcon from "@mui/icons-material/Add";
 import { CreateEvent } from "./components/CreateEvent";
@@ -34,7 +28,7 @@ function App() {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get("data.json");
-      setEvents(data.eventList)
+      setEvents(data.eventList);
     })();
   }, []);
   return (
@@ -50,15 +44,24 @@ function App() {
         >
           Taskify
         </Typography>
-        <Box className="boxCenter">
-          <List>
-            {events.map((event,idx) => (
-              <ListItem key={idx}>
-                <EventCard event={event} events={events} setEvents={setEvents} cardTheme={idx >= 3 ? themes[idx % 3] : themes[idx]} />
-              </ListItem>
-            ))}
-          </List>
-        </Box>
+        {events.length === 0 ? (
+          <Typography variant="h4" className="empty-state">No tasks added!</Typography>
+        ) : (
+          <Box className="boxCenter">
+            <List>
+              {events.map((event, idx) => (
+                <ListItem key={idx}>
+                  <EventCard
+                    event={event}
+                    events={events}
+                    setEvents={setEvents}
+                    cardTheme={idx >= 3 ? themes[idx % 3] : themes[idx]}
+                  />
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        )}
         <CreateEvent open={open} setOpen={setOpen} setEvents={setEvents} />
         <Box className="add-btn">
           <Fab onClick={() => setOpen(true)} color="primary" aria-label="add">

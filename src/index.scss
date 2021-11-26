@@ -13,12 +13,12 @@ body {
     30deg,
     rgb(248, 203, 203),
     rgb(252, 252, 252)
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  ); 
   background: linear-gradient(
     30deg,
     rgb(248, 203, 203),
     rgb(252, 252, 252)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  );
   min-height: 100vh;
 }
 .boxCenter{
@@ -46,7 +46,7 @@ body {
   @include mq(640px) {
     max-width: 20rem;
   }
-  max-width: 90vw;
+  width: 90vw;
   backdrop-filter: blur(10px);
   border: 1px solid $grey-col;
   padding: 1rem;
@@ -56,8 +56,9 @@ body {
 .modal-title{
   margin-bottom: 1rem;
 }
-
-.MuiCardHeader-root{
-  font-weight: 700;
-  padding: 0.5rem;
+.empty-state{
+  @include abs-center;
+  text-align: center;
+  min-width:90vw;
+  color: $dark-grey-col;
 }

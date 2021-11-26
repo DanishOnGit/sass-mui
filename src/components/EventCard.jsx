@@ -8,7 +8,15 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import { makeStyles } from "@mui/styles";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>({
+    root:{
+        [theme.breakpoints.down('sm')]: {
+           minWidth:"90vw"
+          },
+    },
+  headerTitle: {
+    fontSize: "1.25rem",
+  },
   cardTheme: {
     backgroundColor: ({ cardTheme }) => {
       if (cardTheme === "green") {
@@ -37,9 +45,10 @@ const useStyles = makeStyles({
       }
       return "0.35rem solid rgb(253, 152, 0)";
     },
-    minWidth: "100%",
+    width: "100%",
+    minWidth:'50vw',
   },
-});
+}));
 
 export const EventCard = ({ event, cardTheme, setEvents, events }) => {
   const classes = useStyles({ cardTheme });
@@ -50,6 +59,7 @@ export const EventCard = ({ event, cardTheme, setEvents, events }) => {
   return (
     <Card className={classes.cardTheme} elevation={4}>
       <CardHeader
+        sx={{ padding: "0.25rem 0.5rem" }}
         action={
           <IconButton
             onClick={() => deleteEvent(event.id)}
@@ -58,9 +68,10 @@ export const EventCard = ({ event, cardTheme, setEvents, events }) => {
             <DeleteIcon />
           </IconButton>
         }
+        classes={{ title: classes.headerTitle }}
         title={event.title}
       />
-      <CardContent>
+      <CardContent sx={{ padding: "0.25rem 0.5rem" }}>
         <Typography variant="body2" color="textSecondary">
           {event.description}
         </Typography>
