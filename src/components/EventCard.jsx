@@ -10,9 +10,14 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme)=>({
     root:{
+        wordWrap:"break-word",
+        minWidth:'50vw',
         [theme.breakpoints.down('sm')]: {
-           minWidth:"90vw"
+           minWidth:"90vw",
           },
+          [theme.breakpoints.up('sm')]: {
+           maxWidth:"50vw",
+           },
     },
   headerTitle: {
     fontSize: "1.25rem",
@@ -46,7 +51,7 @@ const useStyles = makeStyles((theme)=>({
       return "0.35rem solid rgb(253, 152, 0)";
     },
     width: "100%",
-    minWidth:'50vw',
+    
   },
 }));
 
@@ -57,7 +62,7 @@ export const EventCard = ({ event, cardTheme, setEvents, events }) => {
     setEvents(result);
   };
   return (
-    <Card className={classes.cardTheme} elevation={4}>
+    <Card className={classes.cardTheme} classes={{root:classes.root}} elevation={4}>
       <CardHeader
         sx={{ padding: "0.25rem 0.5rem" }}
         action={

@@ -25,16 +25,13 @@ body {
   @include flex-center;
   padding: 1rem;
 }
-.app-name {
-  font-weight: 700;
-}
 .add-btn{
   @include flex-center;
   @include mq(640px){
     bottom: 1.5rem;
     right: 1.5rem;
   }
-  position: absolute;
+  position: fixed;
   bottom: 1rem;
   right: 1rem;
 }

@@ -36,10 +36,10 @@ function App() {
       <div className="App">
         <Typography
           fontWeight={700}
+          mt={3}
           variant="h3"
           component="h1"
           align="center"
-          className="app-name"
           color="primary"
         >
           Taskify
