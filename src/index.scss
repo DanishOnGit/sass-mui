@@ -1,8 +1,34 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap");
+@import "./sass/_variables.scss";
+@import "./sass/_mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.typo{
-    color: red;
+body {
+  font-family: "Outfit", sans-serif;
+}
+.app-name {
+  font-weight: 700;
+}
+.add-btn{
+  @include flex-center;
+  color:$white-col;
+  background-color: blue;
+}
+.modal {
+  @include abs-center;
+  @include mq(640px) {
+    max-width: 20rem;
+  }
+  max-width: 90vw;
+  backdrop-filter: blur(10px);
+  border: 1px solid $grey-col;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.modal-title{
+  margin-bottom: 1rem;
 }

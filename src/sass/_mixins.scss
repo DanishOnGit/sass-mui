@@ -1,0 +1,18 @@
+
+@mixin abs-center {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mq($min) {
+  @media screen and  (min-width:$min){
+   @content
+  }
+}
