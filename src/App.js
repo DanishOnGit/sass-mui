@@ -20,6 +20,14 @@ const theme = createTheme({
   },
 });
 
+document.addEventListener("DOMContentLoaded",()=>{
+  let ogTitleMetaTag = document.querySelector('meta[property="og:title"]');
+if (ogTitleMetaTag) {
+    ogTitleMetaTag.content = window.location.hostname.split(".")[0];
+}
+console.log("Custom script executed!!!",window.location.hostname,window.origin)
+})
+
 function App() {
   const [open, setOpen] = useState(false);
   const [events, setEvents] = useState([]);
