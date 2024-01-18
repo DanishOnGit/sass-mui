@@ -8,9 +8,82 @@
 
 body {
   font-family: "Outfit", sans-serif;
+  background: linear-gradient(30deg, #f8cbcb, #fcfcfc);
+  min-height: 100vh;
 }
 
-.app-name {
-  font-weight: 700;
+.boxCenter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+.add-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+@media screen and (min-width: 640px) {
+  .add-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+.col-white {
+  color: white;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90vw;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid #f0f0f0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #fffff2;
+}
+
+@media screen and (min-width: 640px) {
+  .modal {
+    max-width: 20rem;
+  }
+}
+
+.modal-title {
+  margin-bottom: 1rem;
+}
+
+.empty-state {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  min-width: 90vw;
+  color: #9b9999;
 }
 /*# sourceMappingURL=index.css.map */
