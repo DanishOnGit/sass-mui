@@ -5,6 +5,9 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta property="og:url" content="https://www.example.com/my-page">
+    <meta property="og:title" content="Original" />
+    <meta property="og:description" content="Taskiy app is cool" />
     <meta
       name="description"
       content="Web site created using create-react-app"
@@ -16,6 +19,18 @@
     />
 
     <title>Taskify</title>
+    <script>
+      // Detect the need to update the og:title
+      console.log("Custom script executed!!!",window.location.hostname,window.origin)
+      // Get the Open Graph meta tag by property attribute
+      let ogTitleMetaTag = document.querySelector('meta[property="og:title"]');
+
+      // Check if the meta tag exists before updating its content
+      if (ogTitleMetaTag) {
+          // Update the content attribute of the meta tag
+          ogTitleMetaTag.content = window.location.hostname.split(".")[0];
+      }
+  </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
